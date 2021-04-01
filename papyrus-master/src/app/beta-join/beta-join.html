@@ -1,0 +1,15 @@
+<div [ngClass]='modalShow'>
+    <button class='close-btn' mat-raised-button  (click)='close()'></button>
+    <h1>
+        Join Us As a Beta Tester
+    </h1>
+    <div> 
+        <p [innerHTML]=greeting></p>
+        <div class='input-holder'> 
+            <label> Email address </label>
+            <input type='email' [(ngModel)]='email' (keyup)='greetingChange()'/>
+        </div>
+        <button mat-raised-button class='close' (click)='close()'> Close </button>
+        <button mat-raised-button class='submit' (click)='submit()'> Submit Email </button>
+    </div>
+</div>

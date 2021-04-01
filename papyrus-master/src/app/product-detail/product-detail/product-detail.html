@@ -1,0 +1,206 @@
+<div class='container-fluid'>
+    <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-7">
+            <div class="row">
+                <div class="card product-card">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <img style="width: 200px;" src='../../assets/img/{{product.image}}' alt='product' />
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <b>
+                                    <h2 class="card-title">{{product.name}}</h2>
+                                </b>
+                                <p class="card-text">SKU: {{product.sku}}</p>
+
+                                <div class="card-text">
+                                    <table class='table table-striped'>
+                                        <tbody>
+                                            <tr>
+                                                <td><b>Reactivity</b></td>
+                                                <td> Kit to react <label>{{getMolecule(product.molecule1)}}</label> with
+                                                    <label>{{getMolecule(product.molecule2)}}</label>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td><b>Requirements</b></td>
+                                                <td>
+                                                    <label>{{getGroup(product.group1)}}</label> on a
+                                                    <label>{{getMolecule(product.molecule1)}}</label>
+                                                    <br>
+                                                    with a <label>{{getGroup(product.group2)}}</label> on separate
+                                                    <label>{{getMolecule(product.molecule2)}}</label>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="card-text">
+                                    <b>Size: </b>
+                                    <!--input [value]="userCustomSize" (keyup)='customSizeChange($event)' /-->
+                                    <div class='size-select-holder'>
+                                        <button type="button" class="btn btn-outline-primary" *ngFor="let p of group"
+                                            (click)='customSizeChange(p)'>{{p.size}}</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card description-card">
+                        <div class="card-body">
+                            <h2 class="card-title">Description</h2>
+                            <p class="card-text" [innerHTML]=product.detailed_description></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card">
+                <div class="card-header">Ordering</div>
+                <div class="card-body">
+                    <!--Purchasing-->
+                    <h2>${{price}}</h2>
+                    <div class="card-text">
+                        <div class="d-grid gap-2">
+                            <button (click)='addToCart();' onclick="gtag_report_conversion();" class="btn btn-primary"> Add to Basket </button>
+                            <button (click)='getQuote();' onclick="gtag_report_conversion();" class="btn btn-info"> Get a Quote </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <div class="accordion" id="accordionExample">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingOne">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne" onclick="gtag_report_conversion();"
+                                    (click)='saveGuideAction("How to get a $25 Sample Kit", true);'>
+                                    How to get a $25 Sample Kit
+                                </button>
+                            </h2>
+                            <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne"
+                                data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                    We're still beta testing! Please sign up.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingTwo">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo"
+                                    (click)='saveGuideAction("Ordering Information", true);' onclick="gtag_report_conversion();">
+                                    Ordering Information
+                                </button>
+                            </h2>
+                            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                                data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                    We're still beta testing! Please sign up.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-md-1">
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--
+        <div class="row">
+            <div class='product-section'>
+
+                <img class='product-image' src='{{product.image}}' alt='product' />
+
+                <div class='product-detail'>
+                    <div class='product-title'>
+                        <div class='product-thumb'>
+                            <img class='thumbnail' src="{{product.thumbnail}}" alt='thumbnail' />
+                            <label>SKU: </label> {{ product.sku }}
+                        </div>
+
+                        <div class='product-name'>
+                            <label> Product Name: </label>
+                            {{ product.name }}
+                        </div>
+                    </div>
+
+                    <div class='product-description'>
+                        <p> {{product.description}} </p>
+                    </div>
+
+                    <div class='product-size'>
+                        <div>
+                            <label>Size: </label>
+                            
+                            <div class='size-select-holder'>
+                                <button mat-raised-button *ngFor="let p of group" class='size-select'
+                                    (click)='customSizeChange(p)'>{{p.size}}</button>
+                            </div>
+                        </div>
+
+                        <div class='add-to-cart'>
+                            <label>${{price}}</label>
+                            <button (click)='addToCart()' mat-raised-button> Add to Basket </button>
+                            <button (click)='getQuote()' mat-raised-button> Get a Quote </button>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+            <table class='product-reactivity'>
+                <tbody>
+                    <tr>
+                        <td> <label> Reactivity </label></td>
+                        <td> Kit to react <label>{{getMolecule(product.molecule1)}}</label> with
+                            <label>{{getMolecule(product.molecule2)}}</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td> <label>Requirements</label> </td>
+                        <td>
+                            <label>{{getGroup(product.group1)}}</label> on
+                            <label>{{getMolecule(product.molecule1)}}</label>
+                            <br>
+                            <label>{{getGroup(product.group2)}}</label> on
+                            <label>{{getMolecule(product.molecule2)}}</label>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class='customer-guide'>
+                <mat-tree [dataSource]="dataSource" [treeControl]="treeControl">
+                    <mat-tree-node *matTreeNodeDef="let node" matTreeNodePadding>
+                        <button mat-icon-button disabled></button>
+                        {{node.name}}
+                    </mat-tree-node>
+                    <mat-tree-node class='parent' *matTreeNodeDef="let i = index;let node;when: hasChild; "
+                        matTreeNodePadding>
+                        <button (click)='saveGuideAction(node.name, treeControl.isExpanded(node))' mat-icon-button
+                            matTreeNodeToggle style='width:100%;text-align:left;'
+                            [attr.aria-label]="'Toggle ' + node.name">
+                            <mat-icon class="mat-icon-rtl-mirror">
+                                {{treeControl.isExpanded(node) ? 'expand_more' : 'chevron_right'}}
+                            </mat-icon>
+
+                            {{node.name}}
+                        </button>
+                    </mat-tree-node>
+                </mat-tree>
+            </div>
+        </div>
+        -->

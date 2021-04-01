@@ -1,0 +1,46 @@
+<div class="main-menu">
+
+    <button mat-raised-button class='menu-mobile menu-toggle' (click)='menuToggle()'>
+        <img src='../../assets/img/hamburger-menu.svg' />
+    </button>
+
+    <img routerLink="/" routerLinkActive="active" class="logo" src='../../assets/img/Logo.PNG' alt="logo" />
+    <div class="flex-grow"></div>
+    <div class="flex-grow"></div>
+    <a routerLink="/" routerLinkActive="active" mat-button class="menu-p m1">Home</a>
+    <a (click)='linkToBrowseDesktop($event)' routerLinkActive="active" mat-button class="menu-p m1">Browse</a>
+    <button (mouseenter)='showingSubMenu()' (mouseleave)='hideSubMenu()' mat-button class="menu-p m2" (click)='linkToBrowseDesktop($event)'> 
+        Conjugation Kits
+        <div *ngIf='ifDropdown' class='submenu'> 
+            <div *ngFor="let category of categories" id="{{category.id}}" (click)="linkToSubmenu(category)"> 
+                {{category.name}}
+            </div>
+            <div (click) = 'linkToContact(0)' routerLinkActive="active" class=""> Free Conjugation Consultation </div>
+        </div>
+    </button>
+    <a (click) = 'linkToContact(0)' routerLinkActive="active" mat-button class="menu-p m1"> Contact Us </a>
+    <div class="search-holder"> 
+        <img class="search-img" src="../../assets/img/search.png" alt="search" (click)="search()" />
+        <input class="search-input" placeholder="Keywords" (keyup)="changeKeyword($event)" />
+    </div>
+    
+    <div class="flex-grow"></div>
+    <div class="shopping-cart">
+        <img class="cart-img" src="../../assets/img/shopping-cart.png" alt="shopping-cart" />
+        <label>0</label>
+    </div>
+    <div class='{{mobileMenu}}'> 
+        <a routerLink="/" (click)='menuToggle()' routerLinkActive="active" mat-button class="menu-mobile">Home</a>
+        <a (click)='linkToBrowseMobile()' routerLinkActive="active" mat-button class="menu-mobile">Browse</a>
+        <button (click)='toggleSubMenu()' mat-button class="menu-mobile"> 
+            Conjugation Kits
+            <div *ngIf='ifDropdown' class='submenu'> 
+                <div *ngFor="let category of categories" id="{{category.id}}" (click)="linkToSubmenu(category)" mat-raised-button > 
+                    {{category.name}}
+                </div>
+                <div (click) = 'linkToContact(0)' routerLinkActive="active" mat-button class=""> Free Conjugation Consultation </div>
+            </div>
+        </button>
+        <a (click) = 'linkToContact(1)' routerLinkActive="active" mat-button class="menu-mobile"> Contact Us </a>
+    </div>
+</div>

@@ -1,0 +1,373 @@
+@import url('https://fonts.googleapis.com/css2?family=BioRhyme&display=swap');
+
+h1 {
+    font-size: 30px;
+    color: blue;
+    margin-bottom: 30px;
+    letter-spacing: 2px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+h2 {
+    font-size: 30px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+p {
+    font-size: 15px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+select {
+    width: 150px;
+    margin-left: 10px;
+    margin-right: 10px;
+    border-radius: 5px;
+    height: 24px;
+    color: black;
+}
+
+::ng-deep .mat-select-value-text>.mat-select-min-line {
+    color: black;
+}
+
+::ng-deep .mat-primary .mat-option.mat-selected:not(.mat-option-disabled) {
+    color: black;
+}
+
+.herounit {
+    background: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 600px;
+    background-image: url(../../assets/img/banner3.jpg);
+    background-size: cover;
+    z-index: 3;
+}
+
+/*.container::before {    
+    content: "";
+    background-image: url(../../assets/img/banner2.jpg);
+    background-size: cover;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    opacity: 1;
+}*/
+
+.title-section {
+    margin-top: 60px;
+    padding-top: 100px;
+    padding-bottom: 20px;
+    text-align: left;
+    width: 100%;
+}
+
+.molecule-section {
+    background: transparent;
+    padding-left: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-bottom: 50px;
+    color: black;
+    width: 100%;
+}
+
+
+.title-section img {
+    /*box-shadow: 0px 5px 5px -3px rgb(0 0 0 / 20%), 0px 8px 10px 1px rgb(0 0 0 / 14%), 0px 3px 14px 2px rgb(0 0 0 / 12%);*/
+    width: 500px;
+    position: absolute;
+    right: 30px;
+    top: 100px;
+    border-top-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+}
+
+.title-section h1 {
+    color: black;
+    font-size: 2em;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.title-section h2 {
+    color: black;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 3em;
+    font-weight: bold;
+}
+
+.molecule-input {
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    color: black;
+    border-color: black;
+    text-align: center;
+    font-size: 20px;
+    line-height: 50px;
+    background: transparent;
+    border-width: 3px;
+}
+
+.product-table {
+    width: calc(100% - 40px);
+    min-height: 200px;
+    /* margin-top: 78px; */
+    border-radius: 2px;
+    border-spacing: 0px;
+    background: white; 
+    border-top: solid thin gray;
+}
+
+::ng-deep .mat-select-arrow {
+    color: black;
+}
+
+::ng-deep .mat-form-field-flex {
+    border-bottom: solid 3px black;
+}
+
+::ng-deep .mat-form-field-type-mat-select:not(.mat-form-field-disabled) .mat-form-field-flex {
+    width: 150px;
+}
+
+img.table-image {
+    width: 80px;
+    height: 80px;
+}
+
+
+.more-btn {
+    color: white;
+    background: blue;
+}
+
+.category-overview {
+    display: flex;
+    display: flex;
+    background: transparent;
+    margin-top: 0px;
+    width: 100%;
+}
+
+.category-detail, .item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1em;
+    cursor: pointer;
+    background-color: lightgray;
+    border:1px solid gray;
+}
+
+.category-detail a {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.category-detail img {
+    width: 150px;
+    height: 150px;
+}
+
+.item img {
+    width: 150px;
+    height: 150px;
+}
+
+.category-detail h2 {
+    color: blue;
+    font-size: 30px;
+}
+
+.category-detail p {
+    font-size: 20px;
+}
+
+.contact {
+    display: flex;
+}
+
+.logo {
+    margin-left: 50px;
+}
+
+h3.card-title{
+    font-weight: bold;
+}
+
+.category-section{
+    padding-top: 5em;
+}
+
+.category-list{
+    padding-top: 3em;
+    padding-bottom: 3em;
+}
+
+.category-image{
+    max-width: 10em;
+}
+
+a.category-link{
+    cursor: pointer;
+    text-decoration: none;
+    color:black;
+}
+
+a.category-link:hover{
+    cursor: pointer;
+    color:blue;
+}
+
+.section-title{
+    color:gray;
+}
+
+.more-section {
+    /*box-shadow: 0px 5px 5px -3px rgb(0 0 0 / 20%), 0px 8px 10px 1px rgb(0 0 0 / 14%), 0px 3px 14px 2px rgb(0 0 0 / 12%);*/
+    padding-top: 62px;
+    padding-bottom: 42px;
+    width: 100%;
+    background: #c5c5c5;
+    color: white;
+    /* padding-left: 50px; */
+    letter-spacing: 3px;
+    align-items: center;
+    /* display: flex; */
+    text-align: center;
+}
+
+.quiz {
+    min-width: 500px;
+}
+
+.company {
+    margin-top: 30px;
+}
+
+a>h2 {
+    cursor: pointer;
+}
+
+.link-to-other-page {
+    margin-top: 56px;
+}
+
+li {
+    display: block;
+}
+
+.mobile-only {
+    display: none;
+}
+
+.molecule-selection-detail {
+    margin-bottom: 0px;
+}
+
+
+::ng-deep .mat-form-field-label {
+    color: #eb19e4;
+}
+
+table, td, tr, th, thead, tbody{
+    border:0px;
+}
+
+/*@media (max-width:600px) {
+
+    .category-overview {
+        justify-content: center;
+    }
+    
+    .title-section h1 {
+        font-size: 17px;
+    }
+
+    .title-section h2 {
+        font-size: 24px;
+    }
+
+    .title-section {
+        background-size: 100% 400px;
+        padding-left: 0px;
+        text-align: center;
+    }
+
+    .more-section { 
+        padding-left: 0px;
+        width: 100%;
+    }
+
+    .contact {
+        flex-direction: column;
+    }
+
+    .quiz {
+        min-width: auto;
+    }
+
+    p {
+        padding-left: 0px;
+    }
+
+    ul {
+        padding: 0px;
+    }
+
+    .mobile-only {
+        display: initial;
+    }
+
+    .category-detail {
+        display: none;
+    }
+
+    .molecule-section {
+        padding-left: 0px;
+    }
+
+    .molecule-selection-detail {
+        display: flex;
+        flex-direction: column;
+    }
+
+    ::ng-deep .mat-form-field-type-mat-select:not(.mat-form-field-disabled) .mat-form-field-flex {
+        width: 100%;
+    }
+
+    .m-form-field {
+        width: 80%;
+    }
+
+    .molecule-input {
+        color: red;
+    }
+
+    .th1>img {
+        width: 40px;
+        height: 40px;
+    }
+
+    .molecule-section {
+        min-height: unset;
+    }
+
+    .item {
+        width: 300px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 30px;
+        box-shadow: unset;
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+}*/

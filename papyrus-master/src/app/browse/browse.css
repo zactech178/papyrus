@@ -1,0 +1,137 @@
+.container {
+    display: flex;
+    padding-top: 120px;
+    padding-left: 50px;
+    padding-right: 50px;
+    font-size: 20px;
+    background-image:url(../../assets/img/banner2.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px;
+    line-height: 40px;
+    min-height: 100vh;
+}
+
+.filter-section {
+    min-width: 200px;
+    border: solid thin #bdd4ff;
+    margin-right: 50px;
+    margin-left: 50px;
+    border-radius: 5px;
+    overflow: hidden;
+    background: white;
+}
+
+.filter-title {
+    background: #bdd4ff;
+}
+
+.filter-title>h3 {
+    text-align: center;
+    margin: 0px !important;
+    line-height: 40px;
+}
+
+.category-filter {
+    padding-left: 10px;
+    padding-bottom: 10px;
+}
+
+.category-filter>div {
+    height: 30px;
+    margin-top: 10px;
+}
+
+.product-detail {
+    display: flex;
+    margin-bottom: 10px;
+    padding: 20px;
+    border-radius: 10px;
+    overflow: hidden;
+    border: solid thin #bdd4ff;
+    background-image: url(../../assets/img/logo6.png);
+    background-repeat: no-repeat;
+    background-position: top right;
+    background-size: 212px;
+    background-color: white;
+    box-shadow: 0px 5px 5px -3px rgb(0 0 0 / 20%), 0px 8px 10px 1px rgb(0 0 0 / 14%), 0px 3px 14px 2px rgb(0 0 0 / 12%);
+}
+
+.product-image {
+    width: 200px;
+    height: 200px;
+    min-width: 200px;
+    min-height: 200px;
+}
+
+.product-notes {
+    height: 200px;
+    width: 100%;
+    margin-left: 20px;
+}
+
+.product-name {
+    height: 50px;
+    text-decoration: underline;
+}
+
+.product-description {
+    height: 120px;
+    min-height: 120px;
+    max-height: 120px;
+    border-bottom: solid thin gray;
+    position: relative;
+}
+
+.more {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    color: white;
+    background: blue;
+}
+
+.product-reactivity {
+    height: 30px;
+}
+
+.product-section {
+    width: 100%;
+}
+
+.my-checkbox {
+    margin: 0 12px;
+}
+
+::ng-deep .mat-checkbox .mat-checkbox-frame {
+    border-color: black;
+    border-radius: 3px;
+}
+
+@media (max-width: 600px) {
+    .container {
+        flex-direction: column;
+        padding-top: 80px;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .filter-section {
+        min-width: unset;
+        margin-right: 0px;
+        margin-left: 0px;
+        margin-bottom: 10px;
+    }
+
+    .product-detail {
+        flex-direction: column;
+    }
+
+    .more {
+        background: white;
+        color: blue;
+    }
+}
+
+

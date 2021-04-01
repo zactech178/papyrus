@@ -1,0 +1,60 @@
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: 6000px;
+}
+
+.carousel-wrapper {
+    overflow: hidden;
+}
+
+.carousel-inner {
+    display: flex;
+}
+
+.paginate-holder {
+    position: relative;
+}
+
+.paginate-left {
+    position: absolute;
+    left: -20px;
+    top: -170px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    padding: 0px;
+    overflow: hidden;
+    background-image: url(../../assets/img/left-arrow.png);
+    min-width: 30px;
+    background-position: center left;
+    background-size: 30px;
+}
+
+.paginate-right {
+    position: absolute;
+    right: -20px;
+    top: -170px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    padding: 0px;
+    overflow: hidden;
+    background-image: url(../../assets/img/left-arrow.png);
+    min-width: 30px;
+    background-position: center left;
+    background-size: 30px;
+    transform: rotate(180deg);
+}
+
+.paginate-left img {
+    width: 20px;
+    height: 20px;
+}
+
+.paginate-right img {
+    width: 20px;
+    height: 20px;
+    transform: rotate(180deg);
+}

@@ -1,0 +1,57 @@
+<div class='container-fluid'>
+    <div class="row">
+        <div class="col-md-3">
+            <div class="card">
+                <div class="card-header bg-primary text-white">
+                    Filters
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">Category Filter</h5>
+                    <p class="card-text" *ngFor='let category of categories'>
+                        <mat-checkbox [(ngModel)]='filters[category.id]' (click)='saveCategoryAction(category)'
+                            class='my-checkbox'> {{category.name}} </mat-checkbox>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-8 col-md-offset-1">
+            <h3 *ngIf="keyword!='all'"> {{products.length}} Products Related to "{{keyword}}" </h3>
+
+            <div class="row" *ngFor="let product of products">
+                <div class="card product-card" *ngIf="checkFiltered(product)" (click)='linkToDetail(product)'>
+                    <div class="row g-0">
+                        <div class="col-md-4">
+                            <img src="{{product.image}}" class="product-card-img">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <b><h2 class="card-title">{{product.name}}</h2></b>
+                                <p class="card-text">{{product.description}}</p>
+                                <p class="card-text"><b class="text-muted">Reactivity: </b>{{getReactivity(product)}}</p>
+                                <button class="btn btn-primary">More Info</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+
+            <!--<div *ngFor="let product of products">
+                <div *ngIf="checkFiltered(product)" class='product-detail'>
+                    <img class='product-image' src="{{product.image}}" />
+                    <div class='product-notes'>
+                        <div class='product-name'>
+                            <label style='color:blue'>Product Name: </label>
+                            <span (click)='linkToDetail(product)'> {{product.name}} </span>
+                        </div>
+                        <div class='product-description'>
+                            <label style='color:blue'> Product Description: </label>{{product.description}}
+                            <button class='more' mat-raised-button (click)='linkToDetail(product)'> More... </button>
+                        </div>
+                        <div class='product-reactivity'> <label style='color:blue'> Product Reactivity:
+                            </label>{{getReactivity(product)}} </div>
+                    </div>
+                </div>
+            </div>-->
+        </div>
+    </div>
+</div>

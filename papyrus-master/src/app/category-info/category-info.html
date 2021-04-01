@@ -1,0 +1,31 @@
+<div class='container'>
+    <div class='category-overview'>
+        <div class='category-detail'>
+            <img src="{{category.thumbnail}}" />
+            <a (click)="linkToBrowse()"> <h2>{{category.name}}</h2> </a>
+            <p>{{category.description}}</p>
+        </div>    
+        <img class='logo' src="../../assets/img/logo6.png" alt='logo' />
+    </div>
+    
+    <div class='more-section'>
+        <div class='contact'>
+            
+            <div class='quiz'>
+                <h1> Papyrus Bio </h1>
+                <p> Couldn't you find what you need? </p>
+                <p> <a routerLink="/contact" routerLinkActive="active" class="menu-p m1"> Contact Us </a> for free </p>
+                <p> biconjugation consultation. </p>
+            </div>  
+            <ul class='link-to-other-page'>
+                <li><a routerLink="/browse" routerLinkActive="active" class="menu-p m1">Browse All Products</a></li>
+                <li><a routerLink="/" routerLinkActive="active" class="menu-p m1">About Us</a></li>
+                <li><a routerLink="/" routerLinkActive="active" class="menu-p m1">Terms and Conditions</a></li>
+                <li><a routerLink="/" routerLinkActive="active" class="menu-p m1">Privacy and Policy</a></li>
+                <li><a routerLink="/contact" routerLinkActive="active" class="menu-p m1"> Contact Us </a></li>
+            </ul>
+        </div>
+        <h2 class='company'>@ Papyrus Technologies Inc. , 2021 All Rights Reserved</h2>
+    </div>
+    
+</div>

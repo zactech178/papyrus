@@ -1,0 +1,15 @@
+<section class="carousel-wrapper" [ngStyle]="carouselWrapperStyle">
+    <ul class="carousel-inner" #carousel>
+        <li *ngFor="let item of items;" class="carousel-item">
+            <ng-container [ngTemplateOutlet]="item.tpl"></ng-container>
+        </li>
+    </ul>
+</section>
+<div class='paginate-holder' *ngIf="showControls" style="margin-top: 1em">
+    <button (click)="next()" mat-raised-button class="btn btn-default paginate-left">
+        <!--img class='left-arrow' src='../../assets/img/left-arrow.png' /-->
+    </button>
+    <button (click)="prev()" mat-raised-button class="btn btn-default paginate-right">
+        <!--img class='right-arrow' src='../../assets/img/left-arrow.png' /-->
+    </button>
+</div>

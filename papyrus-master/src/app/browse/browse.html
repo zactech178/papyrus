@@ -1,0 +1,32 @@
+<div class='container-fluid'>
+    <div class='filter-section'> 
+        <div class='filter-title'> 
+            <h3> Filters hello </h3>
+        </div>
+        
+        <div class='category-filter'> 
+                
+            <div *ngFor='let category of categories'> 
+                <mat-checkbox [(ngModel)]='filters[category.id]' class='my-checkbox' > {{category.name}} </mat-checkbox>
+            </div>
+        </div>
+    </div>
+
+    <div class="product-section"> 
+        <h3 *ngIf="keyword!='all'"> Search results for "{{keyword}}"</h3>
+
+        <div *ngFor="let product of products" > 
+            <div *ngIf="checkFiltered(product)" class='product-detail'>
+                <img class='product-image' src="{{product.image}}" />
+                <div class='product-notes'> 
+                    <div class='product-name'> <label style='color:blue'>Product Name: </label>{{product.name}} </div>
+                    <div class='product-description'> 
+                        <label style='color:blue'> Product Description: </label>{{product.description}} 
+                        <a class='more' mat-raised-button (click)='linkToDetail(product)' > More... </a>
+                    </div>
+                    <div class='product-reactivity'> <label style='color:blue'> Product Reactivity: </label>{{getReactivity(product)}} </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
