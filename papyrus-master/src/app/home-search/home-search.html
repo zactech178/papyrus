@@ -122,10 +122,10 @@
             <div class="col-md-8">
                 <div class="row">
                     <div class="col-md-4" *ngFor="let category of categories; let i = index">
-                        <div class="card">
+                        <div class="card no-border">
                             <a class="category-link" (click)="linkToBrowse(category)">
 
-                                <img class="card-img-top" *ngIf="category.name!=''" src="{{category.thumbnail}}">
+                                <img class="card-img-top" *ngIf="category.name!=''" src="../../assets/img/{{category.thumbnail}}">
                                 <div class="card-body">
                                     <h3 class="card-title">{{category.name}}</h3>
                                     <p class="card-text">{{category.description}}</p>

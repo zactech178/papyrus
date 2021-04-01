@@ -17,7 +17,7 @@
 
         <div *ngFor="let product of products" > 
             <div *ngIf="checkFiltered(product)" class='product-detail'>
-                <img class='product-image' src="{{product.image}}" />
+                <img class='product-image' src="../../assets/img/{{product.image}}" />
                 <div class='product-notes'> 
                     <div class='product-name'> <label style='color:blue'>Product Name: </label>{{product.name}} </div>
                     <div class='product-description'> 

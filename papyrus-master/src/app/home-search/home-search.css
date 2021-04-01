@@ -226,6 +226,10 @@ a.category-link:hover{
     color:blue;
 }
 
+.no-border{
+    border:0px !important;
+}
+
 .section-title{
     color:gray;
 }
