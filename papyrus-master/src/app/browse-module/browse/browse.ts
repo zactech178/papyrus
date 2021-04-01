@@ -2,7 +2,7 @@ import { Component, OnInit }    from '@angular/core';
 import { ActivatedRoute }       from '@angular/router';
 import { Observable }           from 'rxjs';
 import { map }                  from 'rxjs/operators';
-import { Router } from '@angular/router';
+import { Router, NavigationStart, NavigationEnd} from '@angular/router';
 
 import { DataService }          from '../../data.service';
 import { Product, Molecule, Group, Category } from "../../product";
@@ -73,6 +73,12 @@ export class Browse implements OnInit {
   ngOnInit() {
 
     console.log(window.location.href.split('/')[4]);
+
+    this.router.events.subscribe((ev:any) => {
+      if (ev instanceof NavigationEnd) {
+        window.scrollTo(0, 0);
+      }
+    });
     
     if( window.location.href.split('/')[4] ) {
       this.filters[Number(window.location.href.split('/')[4])] = true;

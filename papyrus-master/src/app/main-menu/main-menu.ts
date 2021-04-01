@@ -38,8 +38,10 @@ export class MainMenu implements OnInit {
     this.ifDropdown = !this.ifDropdown;
   }
 
-  linkToSubmenu(cat: Category) {
+  linkToSubmenu(cat: Category, e: Event) {
     
+    e.stopPropagation();
+
     this.dataService.selectedCategory = cat;
         
     this.dataService.categoryChange.emit(this.dataService.selectedCategory);
