@@ -13,8 +13,8 @@ import { map } from 'rxjs/operators';
 })
 
 export class DataService {
-    //ajaxUrl = "http://localhost:8888/papyrus/ajax.php/";
-    ajaxUrl = "https://www.papyrusbio.com/ajax.php/";
+    ajaxUrl = "http://localhost:8888/papyrus/ajax.php/";
+    //ajaxUrl = "https://www.papyrusbio.com/ajax.php/";
     
     options = {
         method: 'GET',
@@ -46,8 +46,8 @@ export class DataService {
             .then(res=>res.json());
     }
 
-    getGroups() {
-        return fetch(this.ajaxUrl + "?get_groups=1", this.options)
+    getGroups(actionType: number = 0, molecule: string = '', ) {
+        return fetch(`${this.ajaxUrl}?get_groups=1&molecule=${molecule}&action_type=${actionType}`, this.options)
             .then(res=>res.json());
     }
 

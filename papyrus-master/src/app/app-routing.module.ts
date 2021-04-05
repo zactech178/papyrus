@@ -53,6 +53,7 @@ const appRoutes: Routes = [
       appRoutes,
       {
         enableTracing: false, // <-- debugging purposes only
+        scrollPositionRestoration: 'top',
       }
     )
   ],

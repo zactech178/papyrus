@@ -20,8 +20,9 @@ export class HomeSearch implements OnInit {
   categories: Category[] = [];
   //molecules: Molecule[] = [{id: -1, name: ''  }];
   molecules: Molecule[] = [];
-  //groups: Group[] = [{id: -1, name: ''}];
-  groups: Group[] = [];
+  groups: Group[] = [{id: -1, name: ''}];
+  availableGroup1: Group[] = [];
+  availableGroup2: Group[] = [];
   molecule1: string = '-1';
   molecule2: string = '-1';
   group1: string = '-1';
@@ -92,6 +93,28 @@ export class HomeSearch implements OnInit {
   }
 
   searchProduct(actionType: number) {
+
+    console.log(this.molecule2);
+    if (actionType == 1) {
+      this.dataService.getGroups(actionType, this.molecule1).then(res=>{
+        //this.groups = res;
+        console.log(res);
+        this.availableGroup1.length = 0;
+        res.map((ele: Group)=>{
+          this.availableGroup1.push(ele);
+        });
+      });
+    } else if (actionType == 2) {
+      this.dataService.getGroups(actionType, this.molecule2).then(res=>{
+        //this.groups = res;
+        console.log(res);
+        this.availableGroup2.length = 0;
+        res.map((ele: Group)=>{
+          this.availableGroup2.push(ele);
+        });
+      });
+    }
+    
     
     this.saveAction(actionType);
 
@@ -102,7 +125,6 @@ export class HomeSearch implements OnInit {
       Number(this.group2)
     ).then(res =>{
       this.products = res;
-      console.log(res);
     });
   }
 
@@ -134,7 +156,6 @@ export class HomeSearch implements OnInit {
     });
 
     this.dataService.getGroups().then(res=>{
-      //this.groups = res;
       res.map((ele: Group)=>{
         this.groups.push(ele);
       });

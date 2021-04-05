@@ -69,8 +69,8 @@
                     <h2>${{price}}</h2>
                     <div class="card-text">
                         <div class="d-grid gap-2">
-                            <button (click)='addToCart();' onclick="gtag_report_conversion();" class="btn btn-primary"> Add to Basket </button>
-                            <button (click)='getQuote();' onclick="gtag_report_conversion();" class="btn btn-info"> Get a Quote </button>
+                            <button (click)='addToCart();' onclick="gtag_report_conversion();fbq('track', 'Purchase', {currency: 'USD', value: 400.00});" class="btn btn-primary"> Add to Basket </button>
+                            <button (click)='getQuote();' onclick="gtag_report_conversion();fbq('track', 'Purchase', {currency: 'USD', value: 400.00});" class="btn btn-info"> Get a Quote </button>
                         </div>
                     </div>
                 </div>
@@ -81,7 +81,7 @@
                         <div class="accordion-item">
                             <h2 class="accordion-header" id="headingOne">
                                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne" onclick="gtag_report_conversion();"
+                                    data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne" onclick="gtag_report_conversion();fbq('track', 'Purchase', {currency: 'USD', value: 400.00});"
                                     (click)='saveGuideAction("How to get a $25 Sample Kit", true);'>
                                     How to get a $25 Sample Kit
                                 </button>
@@ -97,7 +97,7 @@
                             <h2 class="accordion-header" id="headingTwo">
                                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                                     data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo"
-                                    (click)='saveGuideAction("Ordering Information", true);' onclick="gtag_report_conversion();">
+                                    (click)='saveGuideAction("Ordering Information", true);' onclick="gtag_report_conversion();fbq('track', 'Purchase', {currency: 'USD', value: 400.00});">
                                     Ordering Information
                                 </button>
                             </h2>

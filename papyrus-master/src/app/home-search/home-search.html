@@ -36,7 +36,7 @@
                     <mat-form-field appearance="fill" class='m-form-field'>
                         <mat-label>Select an option</mat-label>
                         <mat-select [(value)]="group1" (selectionChange)='searchProduct(3)'>
-                            <mat-option *ngFor="let c of groups" [value]="c.id">{{c.name}}</mat-option>
+                            <mat-option *ngFor="let c of availableGroup1" [value]="c.id">{{c.name}}</mat-option>
                         </mat-select>
                     </mat-form-field>
                     functional groups
@@ -49,7 +49,7 @@
                     <mat-form-field appearance="fill" class='m-form-field'>
                         <mat-label>Select an option</mat-label>
                         <mat-select [(value)]="group2" (selectionChange)='searchProduct(4)'>
-                            <mat-option *ngFor="let c of groups" [value]="c.id">{{c.name}}</mat-option>
+                            <mat-option *ngFor="let c of availableGroup2" [value]="c.id">{{c.name}}</mat-option>
                         </mat-select>
                     </mat-form-field>
                     functional groups
