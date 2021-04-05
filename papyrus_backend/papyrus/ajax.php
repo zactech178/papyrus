@@ -28,17 +28,39 @@
         echo json_encode($res);
 
     } else if (isset($_GET['get_groups'])) {
-
-        $contexts = $mysqli->query("select * from groups");
+        $molecule = $_GET['molecule'];
+        $action_type = $_GET['action_type'];
         $res = array();
-        for($i = 0; $i < $contexts->num_rows; $i++){
-            $row = $contexts->fetch_row();
-            array_push($res, array(
-                'id' => $row[0],
-                'name' => $row[1]
-            ));
+        
+        if($action_type == 0) {
+            $contexts = $mysqli->query("select * from groups");
+            for($i = 0; $i < $contexts->num_rows; $i++){
+                $row = $contexts->fetch_row();
+                array_push($res, array(
+                    'id' => $row[0],
+                    'name' => $row[1]
+                ));
+            }
+        } else if ($action_type == 1) {
+            $contexts = $mysqli->query("select distinct groups.id, groups.name from products join groups on products.group_1 = groups.id where products.molecule_1 = $molecule;");
+            for($i = 0; $i < $contexts->num_rows; $i++){
+                $row = $contexts->fetch_row();
+                array_push($res, array(
+                    'id' => $row[0],
+                    'name' => $row[1]
+                ));
+            }
+        } else if ($action_type == 2) {
+            $contexts = $mysqli->query("select distinct groups.id, groups.name from products join groups on products.group_2 = groups.id where products.molecule_2 = $molecule;");
+            for($i = 0; $i < $contexts->num_rows; $i++){
+                $row = $contexts->fetch_row();
+                array_push($res, array(
+                    'id' => $row[0],
+                    'name' => $row[1]
+                ));
+            }
         }
-
+        
         echo json_encode($res);
 
     } else if (isset($_GET['get_categories'])) {
