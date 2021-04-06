@@ -13,8 +13,8 @@ import { map } from 'rxjs/operators';
 })
 
 export class DataService {
-    ajaxUrl = "http://localhost:8888/papyrus/ajax.php/";
-    //ajaxUrl = "https://www.papyrusbio.com/ajax.php/";
+    //ajaxUrl = "http://localhost:8888/papyrus/ajax.php/";
+    ajaxUrl = "https://www.papyrusbio.com/ajax.php/";
     
     options = {
         method: 'GET',
